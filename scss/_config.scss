@@ -1,0 +1,24 @@
+$primary-clr: #4A586E;
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$yellow: rgb(211, 224, 28);
+$red: rgb(189, 3, 3);
+$red-2: rgb(255, 0, 0);
+$green: rgb(13, 156, 37);
+$green-2: rgb(4, 202, 4);
+$radius: 0.5rem;
+$radius-2: 1rem;
+$space: 0.1rem;
+$transition: all 0.5s ease;
+
+%grid-center {
+    display: grid;
+    place-items: center;
+}
+
+@mixin absolute-position ($top, $left, $translate) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: $translate;
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap');
+@import 'config';
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+*::selection {
+    background-color: $yellow;
+    color: $primary-clr;
+}
+
+body {
+    min-height: 100vh;
+    @extend %grid-center;
+    padding: 1rem 0;
+    background-color: $primary-clr;
+    color: $yellow;
+    line-height: 1;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: $space;
+}
+
+button {
+    cursor: pointer;
+}
+
+.btn {
+    width: 10rem;
+    height: 2.5rem;
+    @extend %grid-center;
+    border: none;
+    border-radius: $radius-2;
+    background-color: $red;
+    color: $white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: $space;
+    transition: $transition;
+    &:hover {
+        background-color: $red-2;
+    }
+}
+
+@import 'form';

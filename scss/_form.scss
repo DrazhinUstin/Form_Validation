@@ -1,0 +1,136 @@
+.form-body {
+    max-width: 500px;
+    width: 90vw;
+}
+
+.form-heading {
+    margin-bottom: 1.5rem;
+}
+
+.form-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.7rem;
+    text-transform: capitalize;
+    letter-spacing: $space;
+}
+
+.form-input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: $radius;
+    font-size: 1rem;
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 20px $green-2;
+    }
+}
+
+textarea.form-input {
+    height: 6rem;
+    padding: 0.5rem;
+    resize: none;
+}
+
+.form-options {
+    display: grid;
+    grid-template-columns: 6rem 6rem;
+}
+
+.mark-input {
+    display: none;
+    &:checked ~ .mark-label::after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.mark-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+    &::before {
+        content: '';
+        flex: 0 0 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: $white;
+    }
+    &::after {
+        content: '';
+        @include absolute-position(50%, 0.5rem, translate(-50%, -50%) scale(0));
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: $red;
+        transition: $transition;
+    }
+}
+
+label[for="user-agreement"] {
+    font-style: italic;
+    &::before {
+        border-radius: 20%;
+    }
+    &::after {
+        border-radius: 20%;
+        background-color: $green;
+    }
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+}
+
+.file-input {
+    @include absolute-position(0, 0, unset);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+    &:hover ~ .file-btn {
+        background-color: $green-2;
+    }
+}
+
+.file-btn {
+    background-color: $green;
+}
+
+.file-preview {
+    img {
+        width: 6rem;
+        height: auto;
+        display: block;
+        margin-top: 0.7rem;
+        border: 1px solid $green-2;
+    }
+}
+
+.error {
+    .form-input {
+        box-shadow: 0 0 20px $red-2;
+    }
+    .mark-label::before {
+        box-shadow: 0 0 20px $red-2;
+    }
+    .file-btn {
+        box-shadow: 0 0 15px $red-2;
+    }
+}
+
+.message {
+    @include absolute-position(100%, 0, unset);
+    color: $red-2;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

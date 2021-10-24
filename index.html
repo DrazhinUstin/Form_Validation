@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form class="form-body">
+        <h1 class="form-heading">Sending data</h1>
+        <div class="form-item">
+            <label for="username" class="form-label">Username*:</label>
+            <input type="text" id="username" name="username" class="form-input required" placeholder="Vivaldy" autocomplete="off">
+            <div class="message"></div>
+        </div>
+        <div class="form-item">
+            <label for="email" class="form-label">Email*:</label>
+            <input type="email" id="email" name="email" class="form-input required" placeholder="Vivaldy@email.com" autocomplete="off">
+            <div class="message"></div>
+        </div>
+        <div class="form-item">
+            <div class="form-label">Your gender:</div>
+            <div class="form-options">
+                <div class="form-option">
+                    <input type="radio" id="gender-male" name="user-gender" value="male" class="mark-input">
+                    <label for="gender-male" class="mark-label">Male</label>
+                </div>
+                <div class="form-option">
+                    <input type="radio" id="gender-female" name="user-gender" value="female" class="mark-input">
+                    <label for="gender-female" class="mark-label">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="user-message" class="form-label">Message:</label>
+            <textarea id="user-message" name="user-message" class="form-input" placeholder="Enter your message..."></textarea>
+        </div>
+        <div class="form-item">
+            <div class="form-label">Your age:</div>
+            <select id="user-age" name="user-age" class="form-input">
+                <option value="before_18">Before 18</option>
+                <option value="18-30">18-30</option>
+                <option value="31-45">31-45</option>
+                <option value="over_45">Over 45</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <div class="form-label">Attach a photo:</div>
+            <div class="file">
+                    <input type="file" id="user-photo" name="user-photo" class="file-input" accept="image/jpeg, image/jpg, image/png">
+                    <button type="button" class="file-btn btn">Choose file</button>
+                    <div class="message"></div>
+            </div>
+            <div class="file-preview"></div>
+        </div>
+        <div class="form-item">
+            <input type="checkbox" id="user-agreement" name="user-agreement" class="mark-input required">
+            <label for="user-agreement" class="mark-label">*I give my consent to the processing of my personal data.</label>
+            <div class="message"></div>
+        </div>
+        <button type="submit" class="submit-btn btn">Send FORM</button>
+    </form>
+    <script src="js/index.js"></script>
+</body>
+</html>
